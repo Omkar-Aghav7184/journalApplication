@@ -8,12 +8,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+@Service
 @Slf4j
 public class UserService {
 
@@ -46,11 +46,11 @@ public class UserService {
         }
         catch (Exception e)
         {
-           log.error("Error occured for {}:",user.getUsername());
-            log.warn("Warn occured for {}:",user.getUsername());
-            log.info("Info occured for {}:",user.getUsername());
-            log.debug("Debug occured for {}:",user.getUsername());
-            log.trace("Trace occured for {}:",user.getUsername());
+           log.error("Error occured for {}:",user.getUsername(),e);
+            log.warn("Warn occured for {}:",user.getUsername(),e);
+            log.info("Info occured for {}:",user.getUsername(),e);
+            log.debug("Debug occured for {}:",user.getUsername(),e);
+            log.trace("Trace occured for {}:",user.getUsername(),e);
         }
         return false;
     }
